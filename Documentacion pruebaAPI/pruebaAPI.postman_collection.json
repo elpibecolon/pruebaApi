@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "6db948fe-177a-4a22-8a92-f0ae377aeac6",
+		"name": "pruebaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:5001/api/BrujasMagos/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/BrujasMagos/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"BrujasMagos",
+						""
+					]
+				},
+				"description": "Consulta de todos los registros de la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:5001/api/BrujasMagos/10000000",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificacion\": 10000000,\r\n    \"nombre\": \"prueba3\",\r\n    \"apellido\": \"pruebaBack\",\r\n    \"edad\": 15,\r\n    \"casa\": \"Slytherin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/BrujasMagos/10000000",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"BrujasMagos",
+						"10000000"
+					]
+				},
+				"description": "Actualizacion de registro especifico con el parametro de \"identificacion\""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:5001/api/BrujasMagos/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificacion\": 10000001,\r\n    \"nombre\": \"prueba3\",\r\n    \"apellido\": \"backendprueba\",\r\n    \"edad\": 10,\r\n    \"casa\": \"Slytherin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/BrujasMagos/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"BrujasMagos",
+						""
+					]
+				},
+				"description": "Insertar el registro segun los parametros indicados"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:5001/api/BrujasMagos/10000000",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificacion\": 10000000,\r\n    \"nombre\": \"prueba3\",\r\n    \"apellido\": \"backend\",\r\n    \"edad\": 10,\r\n    \"casa\": \"Slytherin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/BrujasMagos/10000000",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"BrujasMagos",
+						"10000000"
+					]
+				},
+				"description": "Elimina registro de la bd indicando el parametro especifico de identificacion"
+			},
+			"response": []
+		}
+	]
+}
