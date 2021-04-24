@@ -19,6 +19,13 @@ namespace pruebaApi.Controllers
         }
 
         // GET: api/<controller>
+        /// <summary>
+        /// Obtiene un objeto por su Id.
+        /// </summary>
+        /// <remarks>
+        /// Se obtiene todos los registros almacenados en la bd en formato JSON.
+        /// </remarks>          
+        /// <response code="200">OK. Devuelve el objeto solicitado.</response>        
         [HttpGet]
         public IEnumerable<BrujasMagos> Get()
         {
@@ -26,6 +33,14 @@ namespace pruebaApi.Controllers
         }
 
         // GET: api/<controller>/id
+        /// <summary>
+        /// Obtiene un objeto por su identificacion.
+        /// </summary>
+        /// <remarks>
+        /// Se obtiene el registro almacenado en la bd en formato JSON segun su identificacion.
+        /// </remarks>
+        /// <param name="id">identificacion del objeto.</param>             
+        /// <response code="200">OK. Devuelve el objeto solicitado.</response>
         [HttpGet("{id}")]
         public BrujasMagos Get(Int64 id)
         {
@@ -34,6 +49,20 @@ namespace pruebaApi.Controllers
         }
 
         // POST: api/<controller>
+        /// <summary>
+        /// Insertar registro.
+        /// </summary>
+        /// <remarks>
+        /// Se inserta el registro en BD.
+        /// </remarks>
+        /// <param name="identificacion">id del mago o bruja.</param>
+        /// <param name="nombre">nombre del mago o bruja.</param>
+        /// <param name="apellido">apellido del mago o bruja.</param>
+        /// <param name="edad">edad del mago o bruja.</param>
+        /// <param name="casa">casa al cual pertenece el mago o bruja.</param>            
+        /// <response code="200">OK. Insercion exitosa.</response>        
+        /// <response code="400">BadRequest. No se inserto el objeto.</response>
+        /// <response code="500">Servidor no responde.</response>
         [HttpPost]
         public ActionResult Post([FromBody]BrujasMagos brujasMagos)
         {
@@ -62,6 +91,24 @@ namespace pruebaApi.Controllers
         }
 
         // PUT: api/<controller>/id
+        /// <summary>
+        /// Actualizar registros.
+        /// </summary>
+        /// <remarks>
+        /// Se actualiza el registro en BD segun el parametro id y debe ser el mismo al tag identificacion existente en BD .
+        /// </remarks>
+        /// <param name="id">identificacion del objeto.</param>
+        /// <remarks>
+        /// Parametros para realizar la actualizacion del registro en BD
+        /// </remarks>
+        /// <param name="identificacion">id del mago o bruja.</param>
+        /// <param name="nombre">nombre del mago o bruja.</param>
+        /// <param name="apellido">apellido del mago o bruja.</param>
+        /// <param name="edad">edad del mago o bruja.</param>
+        /// <param name="casa">casa al cual pertenece el mago o bruja.</param>             
+        /// <response code="200">OK. Devuelve el objeto solicitado.</response>        
+        /// <response code="400">BadRequest. No se inserto el objeto.</response>
+        /// <response code="500">Servidor no responde.</response>
         [HttpPut("{id}")]
         public ActionResult Put(Int64 id, [FromBody]BrujasMagos brujasMagos)
         {
@@ -77,6 +124,15 @@ namespace pruebaApi.Controllers
         }
 
         // DELETE: api/<controller>/id
+        /// <summary>
+        /// Elimnar registro.
+        /// </summary>
+        /// <remarks>
+        /// Se elimina el registro en BD.
+        /// </remarks>
+        /// <param name="id">identificacion del objeto a eliminar.</param>             
+        /// <response code="200">OK. Devuelve el objeto solicitado.</response>        
+        /// <response code="400">BadRequest. No se inserto el objeto.</response>
         [HttpDelete("{id}")]
         public ActionResult Delete(Int64 id)
         {
