@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using pruebaApi.Context;
@@ -19,12 +18,14 @@ namespace pruebaApi.Controllers
             this.context = context;
         }
 
+        // GET: api/<controller>
         [HttpGet]
         public IEnumerable<BrujasMagos> Get()
         {
             return context.Brujas_Magos.ToList();
         }
 
+        // GET: api/<controller>/id
         [HttpGet("{id}")]
         public BrujasMagos Get(Int64 id)
         {
@@ -32,6 +33,7 @@ namespace pruebaApi.Controllers
             return brujasMagos;
         }
 
+        // POST: api/<controller>
         [HttpPost]
         public ActionResult Post([FromBody]BrujasMagos brujasMagos)
         {
@@ -59,10 +61,11 @@ namespace pruebaApi.Controllers
             
         }
 
+        // PUT: api/<controller>/id
         [HttpPut("{id}")]
         public ActionResult Put(Int64 id, [FromBody]BrujasMagos brujasMagos)
         {
-            Console.WriteLine("BD: "+brujasMagos.identificacion+" | Parametro: "+id);
+            //Console.WriteLine("BD: "+brujasMagos.identificacion+" | Parametro: "+id);
             if (brujasMagos.identificacion == id)
             {
                 context.Entry(brujasMagos).State = EntityState.Modified;
@@ -73,6 +76,7 @@ namespace pruebaApi.Controllers
             }
         }
 
+        // DELETE: api/<controller>/id
         [HttpDelete("{id}")]
         public ActionResult Delete(Int64 id)
         {
